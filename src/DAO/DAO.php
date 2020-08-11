@@ -1,6 +1,6 @@
 <?php
 
-abstract class Database
+abstract class DatabaseDAO
 {
     //Nos constantes
     const DB_HOST = 'mysql:host=localhost;dbname=blog;charset=utf8';

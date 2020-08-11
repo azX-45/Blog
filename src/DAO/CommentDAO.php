@@ -1,6 +1,6 @@
 <?php
 
-class Comment extends Database
+class Comment extends DatabaseDAO
 {
     public function getCommentsFromArticle($articleId)
     {

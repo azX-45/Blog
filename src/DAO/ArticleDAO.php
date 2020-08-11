@@ -1,6 +1,6 @@
 <?php
 
-class Article extends Database
+class Article extends DatabaseDAO
 {
     public function getArticles()
     {

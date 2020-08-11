@@ -1,10 +1,9 @@
 <?php
-//On inclut le fichier dont on a besoin (ici à la racine de notre site)
-require 'Database.php';
-//Ne pas oublier d'ajouter le fichier Article.php
-require 'Article.php';
-//Ne pas oublier d'ajouter le fichier Comment.php
-require 'Comment.php';
+//Pour nos deux fichiers
+require '../src/DAO/DAO.php';
+require '../src/DAO/ArticleDAO.php';
+//Uniquement pour single.php
+require '../src/DAO/CommentDAO.php';
 ?>
 
 <!DOCTYPE html>
