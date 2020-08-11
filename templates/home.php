@@ -1,8 +1,7 @@
 <?php
-//Pour nos deux fichiers
-require '../src/DAO/DAO.php';
-require '../src/DAO/ArticleDAO.php';
 
+
+use App\src\DAO\ArticleDAO;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,13 +15,13 @@ require '../src/DAO/ArticleDAO.php';
     <h1>Mon blog</h1>
     <p>En construction</p>
     <?php
-    $article = new Article();
+    $article = new ArticleDAO();
     $articles = $article->getArticles();
     while($article = $articles->fetch())
     {
         ?>
         <div>
-            <h2><a href="single.php?articleId=<?= htmlspecialchars($article->id);?>"><?= htmlspecialchars($article->title);?></a></h2>
+            <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->id);?>"><?= htmlspecialchars($article->title);?></a></h2>
             <p><?= htmlspecialchars($article->content);?></p>
             <p><?= htmlspecialchars($article->author);?></p>
             <p>Créé le : <?= htmlspecialchars($article->createdAt);?></p>

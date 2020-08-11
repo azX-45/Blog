@@ -1,11 +1,12 @@
 <?php
 
-abstract class DatabaseDAO
+namespace App\src\DAO;
+
+use PDO;
+use Exception;
+
+abstract class DAO
 {
-    //Nos constantes
-    const DB_HOST = 'mysql:host=localhost;dbname=blog;charset=utf8';
-    const DB_USER = 'root';
-    const DB_PASS = '';
 
     private $connection;
 
@@ -24,12 +25,12 @@ abstract class DatabaseDAO
     {
         //Tentative de connexion à la base de données
         try{
-            $this->connection = new PDO(self::DB_HOST, self::DB_USER, self::DB_PASS);
+            $this->connection = new PDO(DB_HOST, DB_USER, DB_PASS);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //On renvoie la connexion
             return $this->connection;
         }
-        //On lève une erreur si la connexion échoue
+            //On lève une erreur si la connexion échoue
         catch(Exception $errorConnection)
         {
             die ('Erreur de connection :'.$errorConnection->getMessage());
