@@ -1,4 +1,4 @@
-<?php $this->title = "Article"; ?>
+<?php $this->title = 'Article'; ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>
@@ -15,6 +15,8 @@
 <br>
 <a href="../public/index.php">Retour à l'accueil</a>
 <div id="comments" class="text-left" style="margin-left: 50px">
+    <h3>Ajouter un commentaire</h3>
+    <?php include('form_comment.php'); ?>
     <h3>Commentaires</h3>
     <?php
     foreach ($comments as $comment)
