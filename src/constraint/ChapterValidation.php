@@ -3,7 +3,7 @@
 namespace App\src\constraint;
 use App\config\Parameter;
 
-class ArticleValidation extends Validation
+class ChapterValidation extends Validation
 {
     private $errors = [];
     private $constraint;
@@ -50,8 +50,8 @@ class ArticleValidation extends Validation
         if($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('titre', $value);
         }
-        if($this->constraint->minLength($name, $value, 5)) {
-            return $this->constraint->minLength('titre', $value, 5);
+        if($this->constraint->minLength($name, $value, 3)) {
+            return $this->constraint->minLength('titre', $value,3);
         }
         if($this->constraint->maxLength($name, $value, 255)) {
             return $this->constraint->maxLength('titre', $value, 255);
@@ -63,8 +63,8 @@ class ArticleValidation extends Validation
         if($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('contenu', $value);
         }
-        if($this->constraint->minLength($name, $value, 5)) {
-            return $this->constraint->minLength('contenu', $value, 5);
+        if($this->constraint->minLength($name, $value, 3)) {
+            return $this->constraint->minLength('contenu', $value, 3);
         }
     }
 
@@ -73,8 +73,8 @@ class ArticleValidation extends Validation
         if($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('auteur', $value);
         }
-        if($this->constraint->minLength($name, $value, 5)) {
-            return $this->constraint->minLength('auteur', $value, 5);
+        if($this->constraint->minLength($name, $value, 3)) {
+            return $this->constraint->minLength('auteur', $value, 3);
         }
         if($this->constraint->maxLength($name, $value, 255)) {
             return $this->constraint->maxLength('auteur', $value, 255);

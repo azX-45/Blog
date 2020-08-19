@@ -1,14 +1,14 @@
-<?php $this->title = "Nouvel article"; ?>
+<?php $this->title = "Nouveau Chapitre"; ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>
-    <?php include('form_article.php');?>
+    <?php include('form_chapter.php');?>
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>
 
 <?php
-$route = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get('id') : 'addArticle';
-$submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
+$route = isset($post) && $post->get('id') ? 'editChapter&chapterId='.$post->get('id') : 'addChapter';
+$submit = $route === 'addChapter' ? 'Envoyer' : 'Mettre à jour';
 ?>
 <form method="post" action="../public/index.php?route=<?= $route; ?>">
     <label for="title">Titre</label><br>

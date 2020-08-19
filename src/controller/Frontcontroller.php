@@ -8,35 +8,35 @@ class FrontController extends Controller
 {
     public function home()
     {
-        $articles = $this->articleDAO->getArticles();
+        $chapters = $this->chapterDAO->getChapters();
         return $this->view->render('home', [
-           'articles' => $articles
+           'chapters' => $chapters
         ]);
     }
 
-    public function article($articleId)
+    public function chapter($chapterId)
     {
-        $article = $this->articleDAO->getArticle($articleId);
-        $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+        $chapter = $this->chapterDAO->getChapter($chapterId);
+        $comments = $this->commentDAO->getCommentsFromChapter($chapterId);
         return $this->view->render('single', [
-            'article' => $article,
+            'chapter' => $chapter,
             'comments' => $comments
         ]);
     }
 
-    public function addComment(Parameter $post, $articleId)
+    public function addComment(Parameter $post, $chapterId)
     {
         if($post->get('submit')) {
             $errors = $this->validation->validate($post, 'Comment');
             if(!$errors) {
-                $this->commentDAO->addComment($post, $articleId);
+                $this->commentDAO->addComment($post, $chapterId);
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
                 header('Location: ../public/index.php');
             }
-            $article = $this->articleDAO->getArticle($articleId);
-            $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+            $chapter = $this->chapterDAO->getChapter($chapterId);
+            $comments = $this->commentDAO->getCommentsFromChapter($chapterId);
             return $this->view->render('single', [
-                'article' => $article,
+                'chapter' => $chapter,
                 'comments' => $comments,
                 'post' => $post,
                 'errors' => $errors

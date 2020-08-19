@@ -46,8 +46,8 @@ class CommentValidation extends Validation
         if($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('pseudo', $value);
         }
-        if($this->constraint->minLength($name, $value, 5)) {
-            return $this->constraint->minLength('pseudo', $value, 5);
+        if($this->constraint->minLength($name, $value, 3)) {
+            return $this->constraint->minLength('pseudo', $value, 3);
         }
         if($this->constraint->maxLength($name, $value, 255)) {
             return $this->constraint->maxLength('pseudo', $value, 255);
@@ -59,8 +59,8 @@ class CommentValidation extends Validation
         if($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('contenu', $value);
         }
-        if($this->constraint->minLength($name, $value, 5)) {
-            return $this->constraint->minLength('contenu', $value, 5);
+        if($this->constraint->minLength($name, $value, 3)) {
+            return $this->constraint->minLength('contenu', $value, 3);
         }
     }
 }

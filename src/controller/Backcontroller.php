@@ -6,53 +6,53 @@ use App\config\Parameter;
 
 class BackController extends Controller
 {
-    public function addArticle(Parameter $post)
+    public function addChapter(Parameter $post)
     {
         if($post->get('submit')) {
-            $errors = $this->validation->validate($post, 'Article');
+            $errors = $this->validation->validate($post, 'Chapter');
             if(!$errors) {
-                $this->articleDAO->addArticle($post);
-                $this->session->set('add_article', 'Le nouvel article a bien été ajouté');
+                $this->chapterDAO->addChapter($post);
+                $this->session->set('add_chapter', 'Le nouveau chapitre a bien été ajouté');
                 header('Location: ../public/index.php');
             }
-            return $this->view->render('add_article', [
+            return $this->view->render('add_chapter', [
                 'post' => $post,
                 'errors' => $errors
             ]);
         }
-        return $this->view->render('add_article');
+        return $this->view->render('add_chapter');
     }
 
-    public function editArticle(Parameter $post, $articleId)
+    public function editChapter(Parameter $post, $chapterId)
     {
-        $article = $this->articleDAO->getArticle($articleId);
+        $chapter = $this->chapterDAO->getChapter($chapterId);
         if($post->get('submit')) {
-            $errors = $this->validation->validate($post, 'Article');
+            $errors = $this->validation->validate($post, 'Chapter');
             if(!$errors) {
-                $this->articleDAO->editArticle($post, $articleId);
-                $this->session->set('edit_article', 'L\' article a bien été modifié');
+                $this->chapterDAO->editChapter($post, $chapterId);
+                $this->session->set('edit_chapter', 'Le chapitre a bien été modifié');
                 header('Location: ../public/index.php');
             }
-            return $this->view->render('edit_article', [
+            return $this->view->render('edit_chapter', [
                 'post' => $post,
                 'errors' => $errors
             ]);
 
         }
-        $post->set('id', $article->getId());
-        $post->set('title', $article->getTitle());
-        $post->set('content', $article->getContent());
-        $post->set('author', $article->getAuthor());
+        $post->set('id', $chapter->getId());
+        $post->set('title', $chapter->getTitle());
+        $post->set('content', $chapter->getContent());
+        $post->set('author', $chapter->getAuthor());
 
-        return $this->view->render('edit_article', [
+        return $this->view->render('edit_chapter', [
             'post' => $post
         ]);
     }
 
-    public function deleteArticle($articleId)
+    public function deleteChapter($chapterId)
     {
-        $this->articleDAO->deleteArticle($articleId);
-        $this->session->set('delete_article', 'L\' article a bien été supprimé');
+        $this->chapterDAO->deleteChapter($chapterId);
+        $this->session->set('delete_chapter', 'Le chapitre a bien été supprimé');
         header('Location: ../public/index.php');
     }
 

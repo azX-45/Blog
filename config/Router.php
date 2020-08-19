@@ -27,20 +27,20 @@ class Router
         try{
             if(isset($route))
             {
-                if($route === 'article'){
-                    $this->frontController->article($this->request->getGet()->get('articleId'));
+                if($route === 'chapter'){
+                    $this->frontController->chapter($this->request->getGet()->get('chapterId'));
                 }
-                elseif($route === 'addArticle'){
-                    $this->backController->addArticle($this->request->getPost());
+                elseif($route === 'addChapter'){
+                    $this->backController->addChapter($this->request->getPost());
                 }
-                elseif($route === 'editArticle'){
-                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                elseif($route === 'editChapter'){
+                    $this->backController->editChapter($this->request->getPost(), $this->request->getGet()->get('chapterId'));
                 }
-                elseif($route === 'deleteArticle'){
-                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                elseif($route === 'deleteChapter'){
+                    $this->backController->deleteChapter($this->request->getGet()->get('chapterId'));
                 }
                 elseif($route === 'addComment'){
-                    $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                    $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('chapterId'));
                 }
                 elseif($route === 'flagComment'){
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));

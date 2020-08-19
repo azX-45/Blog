@@ -6,9 +6,9 @@ class Validation
 {
     public function validate($data, $name)
     {
-        if($name === 'Article') {
-            $articleValidation = new ArticleValidation();
-            $errors = $articleValidation->check($data);
+        if($name === 'Chapter') {
+            $chapterValidation = new ChapterValidation();
+            $errors = $chapterValidation->check($data);
             return $errors;
         } elseif ($name === 'Comment') {
             $commentValidation = new CommentValidation();

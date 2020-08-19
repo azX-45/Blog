@@ -1,16 +1,16 @@
-<?php $this->title = 'Article'; ?>
+<?php $this->title = 'Chapter'; ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>
-    <h2><?= htmlspecialchars($article->getTitle());?></h2>
-    <p><?= htmlspecialchars($article->getContent());?></p>
-    <p><?= htmlspecialchars($article->getAuthor());?></p>
-    <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+    <h2><?= htmlspecialchars($chapter->getTitle());?></h2>
+    <p><?= htmlspecialchars($chapter->getContent());?></p>
+    <p><?= htmlspecialchars($chapter->getAuthor());?></p>
+    <p>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></p>
 </div>
 <br>
 <div class="actions">
-    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+    <a href="../public/index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
+    <a href="../public/index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
 </div>
 <br>
 <a href="../public/index.php">Retour à l'accueil</a>

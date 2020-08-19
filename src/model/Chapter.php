@@ -2,7 +2,7 @@
 
 namespace App\src\model;
 
-class Article
+class Chapter
 {
     /**
      * @var int

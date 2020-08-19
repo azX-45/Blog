@@ -1,9 +1,9 @@
 <?php
-$route = isset($article) && $article->getId() ? 'editArticle&articleId='.$article->getId() : 'addArticle';
-$submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
-$title = isset($article) && $article->getTitle() ? htmlspecialchars($article->getTitle()) : '';
-$content = isset($article) && $article->getContent() ? htmlspecialchars($article->getContent()) : '';
-$author = isset($article) && $article->getAuthor() ? htmlspecialchars($article->getAuthor()) : '';
+$route = isset($chapter) && $chapter->getId() ? 'editChapter&chapterId='.$chapter->getId() : 'addChapter';
+$submit = $route === 'addChapter' ? 'Envoyer' : 'Mettre à jour';
+$title = isset($chapter) && $chapter->getTitle() ? htmlspecialchars($chapter->getTitle()) : '';
+$content = isset($chapter) && $chapter->getContent() ? htmlspecialchars($chapter->getContent()) : '';
+$author = isset($chapter) && $chapter->getAuthor() ? htmlspecialchars($chapter->getAuthor()) : '';
 ?>
 
 <form method="post" action="../public/index.php?route=<?= $route; ?>">

@@ -2,22 +2,22 @@
 
 <h1>Mon blog</h1>
 <p>En construction</p>
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
-<?= $this->session->show('delete_article'); ?>
+<?= $this->session->show('add_chapter'); ?>
+<?= $this->session->show('edit_chapter'); ?>
+<?= $this->session->show('delete_chapter'); ?>
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<a href="../public/index.php?route=addChapter">Nouvel chapter</a>
 <?php
-foreach ($articles as $article)
+foreach ($chapters as $chapter)
 {
     ?>
     <div>
-        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= htmlspecialchars($article->getContent());?></p>
-        <p><?= htmlspecialchars($article->getAuthor());?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+        <h2><a href="../public/index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></h2>
+        <p><?= htmlspecialchars($chapter->getContent());?></p>
+        <p><?= htmlspecialchars($chapter->getAuthor());?></p>
+        <p>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></p>
     </div>
     <br>
     <?php

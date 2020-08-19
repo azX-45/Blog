@@ -18,10 +18,10 @@ class CommentDAO extends DAO
         return $comment;
     }
 
-    public function getCommentsFromArticle($articleId)
+    public function getCommentsFromChapter($chapterId)
     {
-        $sql = 'SELECT id, pseudo, content, createdAt, flag FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
-        $result = $this->createQuery($sql, [$articleId]);
+        $sql = 'SELECT id, pseudo, content, createdAt, flag FROM comment WHERE chapter_id = ? ORDER BY createdAt DESC';
+        $result = $this->createQuery($sql, [$chapterId]);
         $comments = [];
         foreach ($result as $row) {
             $commentId = $row['id'];
@@ -31,10 +31,10 @@ class CommentDAO extends DAO
         return $comments;
     }
 
-    public function addComment(Parameter $post, $articleId)
+    public function addComment(Parameter $post, $chapterId)
     {
-        $sql = 'INSERT INTO comment (pseudo, content, createdAt, article_id) VALUES (?, ?, NOW(), ?)';
-        $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $articleId]);
+        $sql = 'INSERT INTO comment (pseudo, content, createdAt, chapter_id) VALUES (?, ?, NOW(), ?)';
+        $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $chapterId]);
     }
 
     public function flagComment($commentId)
