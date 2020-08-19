@@ -1,7 +1,7 @@
 <?php $this->title = 'Accueil'; ?>
 
-<h1>Mon blog</h1>
-<p>En construction</p>
+<h1>Billet simple pour l'Alaska</h1>
+<p>Le nouveau roman en ligne!</p>
 <?= $this->session->show('add_chapter'); ?>
 <?= $this->session->show('edit_chapter'); ?>
 <?= $this->session->show('delete_chapter'); ?>
