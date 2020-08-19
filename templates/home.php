@@ -8,7 +8,7 @@
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
-<a href="../public/index.php?route=addChapter">Nouvel chapter</a>
+<a href="../public/index.php?route=addChapter">Nouveau chapitre</a>
 <?php
 foreach ($chapters as $chapter)
 {

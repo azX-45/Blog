@@ -53,7 +53,7 @@ class ChapterDAO extends DAO
             'title' => $post->get('title'),
             'content' => $post->get('content'),
             'author' => $post->get('author'),
-            'chaptereId' => $chapterId
+            'chapterId' => $chapterId
         ]);
     }
 
