@@ -2,9 +2,7 @@
 
 <h1>Billet simple pour l'Alaska</h1>
 <p>Le nouveau roman en ligne!</p>
-<?= $this->session->show('add_chapter'); ?>
-<?= $this->session->show('edit_chapter'); ?>
-<?= $this->session->show('delete_chapter'); ?>
+
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
@@ -20,7 +18,7 @@ if ($this->session->get('pseudo')) {
     <?php if($this->session->get('role') === 'admin') { ?>
         <a href="../public/index.php?route=administration">Administration</a>
     <?php } ?>
-    <a href="../public/index.php?route=addArticle">Nouvel article</a>
+    
     <?php
 } else {
     ?>

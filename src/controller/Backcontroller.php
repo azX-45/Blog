@@ -8,17 +8,19 @@ class BackController extends Controller
 {
     public function administration()
     {
-        return $this->view->render('administration');
+        $chapters = $this->chapterDAO->getChapters();
+        return $this->view->render('administration', [
+            'chapters' => $chapters
+        ]);
     }
-    
     public function addChapter(Parameter $post)
     {
         if($post->get('submit')) {
             $errors = $this->validation->validate($post, 'Chapter');
             if(!$errors) {
-                $this->chapterDAO->addChapter($post);
+                $this->chapterDAO->addChapter($post, $this->session->get('id'));
                 $this->session->set('add_chapter', 'Le nouveau chapitre a bien été ajouté');
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?route=administration');
             }
             return $this->view->render('add_chapter', [
                 'post' => $post,
@@ -34,9 +36,9 @@ class BackController extends Controller
         if($post->get('submit')) {
             $errors = $this->validation->validate($post, 'Chapter');
             if(!$errors) {
-                $this->chapterDAO->editChapter($post, $chapterId);
+                $this->chapterDAO->editChapter($post, $chapterId, $this->session->get('id'));
                 $this->session->set('edit_chapter', 'Le chapitre a bien été modifié');
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?route=administration');
             }
             return $this->view->render('edit_chapter', [
                 'post' => $post,
@@ -58,7 +60,7 @@ class BackController extends Controller
     {
         $this->chapterDAO->deleteChapter($chapterId);
         $this->session->set('delete_chapter', 'Le chapitre a bien été supprimé');
-        header('Location: ../public/index.php');
+        header('Location: ../public/index.php?route=administration');
     }
 
     public function deleteComment($commentId)
