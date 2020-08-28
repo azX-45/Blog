@@ -1,6 +1,7 @@
 <?php
 
 namespace App\config;
+
 use App\src\controller\BackController;
 use App\src\controller\ErrorController;
 use App\src\controller\FrontController;

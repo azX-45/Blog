@@ -10,7 +10,7 @@ class BackController extends Controller
     {
         if(!$this->session->get('pseudo')) {
             $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
-            header('Location: ../public/index.php?route=login');
+            header('Location: ../index.php?route=login');
         } else {
             return true;
         }
@@ -21,7 +21,7 @@ class BackController extends Controller
         $this->checkLoggedIn();
         if(!($this->session->get('role') === 'admin')) {
             $this->session->set('not_admin', 'Vous n\'avez pas le droit d\'accéder à cette page');
-            header('Location: ../public/index.php?route=profile');
+            header('Location: ../index.php?route=profile');
         } else {
             return true;
         }
@@ -48,7 +48,7 @@ class BackController extends Controller
             if(!$errors) {
                 $this->chapterDAO->addChapter($post, $this->session->get('id'));
                 $this->session->set('add_chapter', 'Le nouveau chapitre a bien été ajouté');
-                header('Location: ../public/index.php?route=administration');
+                header('Location: ../index.php?route=administration');
             }
             return $this->view->render('add_chapter', [
                 'post' => $post,
@@ -68,7 +68,7 @@ class BackController extends Controller
             if(!$errors) {
                 $this->chapterDAO->editChapter($post, $chapterId, $this->session->get('id'));
                 $this->session->set('edit_chapter', 'Le chapitre a bien été modifié');
-                header('Location: ../public/index.php?route=administration');
+                header('Location: ../index.php?route=administration');
             }
             return $this->view->render('edit_chapter', [
                 'post' => $post,
@@ -92,7 +92,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
         $this->chapterDAO->deleteChapter($chapterId);
         $this->session->set('delete_chapter', 'Le chapitre a bien été supprimé');
-        header('Location: ../public/index.php?route=administration');
+        header('Location: ../index.php?route=administration');
     }
 }
 
@@ -100,7 +100,7 @@ class BackController extends Controller
     {
         $this->commentDAO->unflagComment($commentId);
         $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
-        header('Location: ../public/index.php?route=administration');
+        header('Location: ../index.php?route=administration');
     }
 
     public function deleteComment($commentId)
@@ -108,7 +108,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
         $this->commentDAO->deleteComment($commentId);
         $this->session->set('delete_comment', 'Le commentaire a bien été supprimé');
-        header('Location: ../public/index.php?route=administration');
+        header('Location: ../index.php?route=administration');
     }
 }
 
@@ -125,7 +125,7 @@ class BackController extends Controller
         if($post->get('submit')) {
             $this->userDAO->updatePassword($post, $this->session->get('pseudo'));
             $this->session->set('update_password', 'Le mot de passe a été mis à jour');
-            header('Location: ../public/index.php?route=profile');
+            header('Location: ../index.php?route=profile');
         }
         return $this->view->render('update_password');
     }
@@ -154,7 +154,7 @@ class BackController extends Controller
         if($this->checkLoggedIn()){
         $this->userDAO->deleteUser($userId);
         $this->session->set('delete_user', 'L\'utilisateur a bien été supprimé');
-        header('Location: ../public/index.php?route=administration');
+        header('Location: ../index.php?route=administration');
     }
 }
 
@@ -167,6 +167,6 @@ class BackController extends Controller
         } else {
             $this->session->set($param, 'Votre compte a bien été supprimé');
         }
-        header('Location: ../public/index.php');
+        header('Location: ../index.php');
     }
 }

@@ -31,7 +31,7 @@ class FrontController extends Controller
             if(!$errors) {
                 $this->commentDAO->addComment($post, $chapterId);
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
-                header('Location: ../public/index.php');
+                header('Location: ../index.php');
             }
             $chapter = $this->chapterDAO->getChapter($chapterId);
             $comments = $this->commentDAO->getCommentsFromChapter($chapterId);
@@ -48,7 +48,7 @@ class FrontController extends Controller
     {
         $this->commentDAO->flagComment($commentId);
         $this->session->set('flag_comment', 'Le commentaire a bien été signalé');
-        header('Location: ../public/index.php');
+        header('Location: ../index.php');
     }
     public function register(Parameter $post)
     {
@@ -60,7 +60,7 @@ class FrontController extends Controller
             if(!$errors) {
                 $this->userDAO->register($post);
                 $this->session->set('register', 'Votre inscription a bien été effectuée');
-                header('Location: ../public/index.php');
+                header('Location: ../index.php');
             }
             return $this->view->render('register', [
                 'post' => $post,
@@ -79,7 +79,7 @@ class FrontController extends Controller
                 $this->session->set('id', $result['result']['id']);
                 $this->session->set('role', $result['result']['name']);
                 $this->session->set('pseudo', $post->get('pseudo'));
-                header('Location: ../public/index.php');
+                header('Location: ../index.php');
             }
             else {
                 $this->session->set('error_login', 'Peudo ou mot de passe incorrects');

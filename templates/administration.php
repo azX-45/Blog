@@ -10,7 +10,7 @@
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
 <h3>Chapitre</h3>
-<a href="../public/index.php?route=addChapter">Nouveau chapitre</a>
+<a href="../index.php?route=addChapter">Nouveau chapitre</a>
 
 <table>
     <tr>
@@ -27,13 +27,13 @@
         ?>
         <tr>
             <td><?= htmlspecialchars($chapter->getId());?></td>
-            <td><a href="../public/index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></td>
-            <td><?= substr(htmlspecialchars($chapter->getContent()), 0, 150);?></td>
+            <td><a href="../index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></td>
+            <td><?= substr($chapter->getContent(), 0, 150);?></td>
             <td><?= htmlspecialchars($chapter->getAuthor());?></td>
             <td>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></td>
             <td>
-                <a href="../public/index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
-                <a href="../public/index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
+                <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
+                <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
             </td>
         </tr>
         <?php
@@ -60,8 +60,8 @@
             <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
             <td>
-                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
+                <a href="../index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
+                <a href="../index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
             </td>
         </tr>
         <?php
@@ -91,7 +91,7 @@
                 <?php
                 if($user->getRole() != 'admin') {
                 ?>
-                <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a>
+                <a href="../index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a>
                 <?php }
                 else {
                     ?>
@@ -105,4 +105,4 @@
     }
     ?>
 </table>
-<a href="../public/index.php">Retour à l'accueil</a>
+<a href="../index.php">Retour à l'accueil</a>

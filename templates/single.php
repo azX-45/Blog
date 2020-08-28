@@ -10,8 +10,8 @@
 </div>
 <br>
 <div class="actions">
-    <a href="../public/index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
-    <a href="../public/index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
+    <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
+    <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
 </div>
 <br>
 
@@ -34,14 +34,14 @@
             <?php
         } else {
             ?>
-            <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+            <p><a href="../index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
             <?php
         }
         ?>
-        <p><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
+        <p><a href="../index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
         <br>
         <?php
     }
     ?>
 </div>
-<a href="../public/index.php">Retour à l'accueil</a>
+<a href="../index.php">Retour à l'accueil</a>
