@@ -1,14 +1,15 @@
 <?php $this->title = 'Administration'; ?>
 
-<h1>Mon blog</h1>
-<p>En construction</p>
+<h1>Administration</h1>
+
+
 <?= $this->session->show('add_chapter'); ?>
 <?= $this->session->show('edit_chapter'); ?>
 <?= $this->session->show('delete_chapter'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
-<h2>Chapitre</h2>
+<h3>Chapitre</h3>
 <a href="../public/index.php?route=addChapter">Nouveau chapitre</a>
 
 <table>
@@ -40,7 +41,7 @@
     ?>
 </table>
 
-<h2>Commentaires signalés</h2>
+<h3>Commentaires signalés</h3>
 <table>
     <tr>
         <td>Id</td>
@@ -68,7 +69,7 @@
     ?>
 </table>
 
-<h2>Utilisateurs</h2>
+<h3>Utilisateurs</h3>
 <table>
     <tr>
         <td>Id</td>
@@ -104,3 +105,4 @@
     }
     ?>
 </table>
+<a href="../public/index.php">Retour à l'accueil</a>

@@ -2,7 +2,6 @@
 $route = isset($post) && $post->get('id') ? 'editChapter&chapterId='.$post->get('id') : 'addChapter';
 $submit = $route === 'addChapter' ? 'Envoyer' : 'Mettre à jour';
 ?>
-
 <form method="post" action="../public/index.php?route=<?= $route; ?>">
     <label for="title">Titre</label><br>
     <input type="text" id="title" name="title" value="<?= isset($post) ? htmlspecialchars($post->get('title')): ''; ?>"><br>

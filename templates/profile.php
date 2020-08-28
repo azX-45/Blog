@@ -1,11 +1,11 @@
 <?php $this->title = 'Mon profil'; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
+<h1>Profil de l'utilisateur</h1>
+
 <?= $this->session->show('update_password'); ?>
 <div>
-    <h2><?= $this->session->get('pseudo'); ?></h2>
-    <p><?= $this->session->get('id'); ?></p>
-    <a href="../public/index.php?route=updatePassword">Modifier son mot de passe</a>
+    <p><?= $this->session->get('pseudo'); ?></p>
+    
+    <a href="../public/index.php?route=updatePassword">Modifier mon mot de passe</a>
     <a href="../public/index.php?route=deleteAccount">Supprimer mon compte</a>
 </div>
 <br>

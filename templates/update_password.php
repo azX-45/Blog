@@ -1,6 +1,6 @@
-<?php $this->title = 'Modifier mot mot de passe'; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
+<?php $this->title = 'Modifier mon mot de passe'; ?>
+<h1>Blog de JeanForteroche</h1>
+<p>Modifcation du mot de passe</p>
 <div>
     <p>Le mot de passe de <?= $this->session->get('pseudo'); ?> sera modifié</p>
     <form method="post" action="../public/index.php?route=updatePassword">
