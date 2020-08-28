@@ -4,9 +4,7 @@ namespace App\src\model;
 
 class User
 {
-    /**
-     * @var int
-     */
+    
     private $id;
 
     /**
