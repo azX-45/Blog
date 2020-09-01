@@ -3,9 +3,9 @@
 <h1>Blog de JeanForteroche</h1>
 <p>Chapitre</p>
 <div>
-    <h2><?= htmlspecialchars($chapter->getTitle());?></h2>
-    <p><?= htmlspecialchars($chapter->getContent());?></p>
-    <p><?= htmlspecialchars($chapter->getAuthor());?></p>
+    <h2><?=($chapter->getTitle());?></h2>
+    <p><?=($chapter->getContent());?></p>
+    <p><?=($chapter->getAuthor());?></p>
     <p>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></p>
 </div>
 <br>

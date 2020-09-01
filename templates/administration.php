@@ -26,7 +26,7 @@
     {
         ?>
         <tr>
-            <td><?= htmlspecialchars($chapter->getId());?></td>
+            <td><?= ($chapter->getId());?></td>
             <td><a href="../index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></td>
             <td><?= substr($chapter->getContent(), 0, 150);?></td>
             <td><?= htmlspecialchars($chapter->getAuthor());?></td>
