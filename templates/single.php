@@ -12,7 +12,7 @@
 <br>
 <div id="comments" class="text-left">
     <h3>Ajouter un commentaire</h3>
-    <?php include('form_comment.php'); ?>
+    <?php include('form_comment.php'); ?></div>
     <h3>Commentaires</h3>
     
     <?php
