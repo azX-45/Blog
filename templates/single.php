@@ -1,21 +1,16 @@
-
 <?php $this->title = 'Chapter'; ?>
-<h1>Blog de JeanForteroche</h1>
-<p>Chapitre</p>
-<div>
+<img src="img/alaska2.jpg">
+<div class=" offset-md-2 col-md-8 offset-sm-1 col-sm-10 mt-3 pb-3 card shadow bg-light mb-3">
     <h2><?=($chapter->getTitle());?></h2>
     <p><?=($chapter->getContent());?></p>
     <p><?=($chapter->getAuthor());?></p>
     <p>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></p>
 </div>
 <br>
-<div class="actions">
-    <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
-    <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
-</div>
-<br>
+<div class=" offset-md-2 col-md-8 offset-sm-1 col-sm-10 mt-3 pb-3 card shadow bg-light mb-3">
 
-<div id="comments" class="text-left" style="margin-left: 50px">
+<br>
+<div id="comments" class="text-left">
     <h3>Ajouter un commentaire</h3>
     <?php include('form_comment.php'); ?>
     <h3>Commentaires</h3>

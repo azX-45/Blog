@@ -59,6 +59,8 @@ class ChapterDAO extends DAO
 
     public function deleteChapter($chapterId)
     {
+        $sql = 'DELETE FROM comment WHERE chapter_id = ?';
+        $this->createQuery($sql, [$chapterId]);
         $sql = 'DELETE FROM chapter WHERE id = ?';
         $this->createQuery($sql, [$chapterId]);
     }

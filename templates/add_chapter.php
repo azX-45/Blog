@@ -1,7 +1,7 @@
 
 <?php $this->title = "Nouveau Chapitre"; ?>
-<h1>Blog de JeanForteroche</h1>
-<p>Nouveau chapitre</p>
+<h1>Nouveau chapitre</h1>
+
 
 <div>
     <?php include('form_chapter.php');?>

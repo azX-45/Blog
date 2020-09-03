@@ -28,13 +28,14 @@
         <tr>
             <td><?= ($chapter->getId());?></td>
             <td><a href="../index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></td>
-            <td><?= substr($chapter->getContent(), 0, 150);?></td>
+            <td><?= substr($chapter->getContent(), 0, 100);?></td>
             <td><?= htmlspecialchars($chapter->getAuthor());?></td>
             <td>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></td>
             <td>
-                <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
-                <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
-            </td>
+            <div class="actions">
+            <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
+            <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
+            </div>
         </tr>
         <?php
     }
