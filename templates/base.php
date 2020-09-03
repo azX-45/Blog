@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Billet simple pour l'Alaska, de Jean Rochefort exclusivement en ligne">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
       <link rel="stylesheet" href="../css/style.css">
       <title>Blog de Jean Forteroche</title>
@@ -21,10 +27,21 @@
                   <li class="nav-item">
                      <a class="nav-link text-white text-uppercase" href="/">Accueil</a>
                   </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle nav-link text-white text-uppercase" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
+               <div class="dropdown-menu">
+                     <a class="dropdown-item nav-link text-black text-uppercase" href="../index.php?route=profile">Profil</a>
+                     <a class="dropdown-item nav-link text-black text-uppercase" href="../index.php?route=administration">Administration</a>
                   <li class="nav-item">
-                     <a class="nav-link text-white text-uppercase" href="index.php?route=login">Connexion</a>
+                     <a class="nav-link text-white text-uppercase" href="../index.php?route=register">Inscription</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link text-white text-uppercase" href="../index.php?route=logout"><i class="fas fa-sign-out-alt"></i></a>
                   </li>
                </ul>
+            </div>
+          </li>
+        </ul>
             </div>
          </nav>
       </header>

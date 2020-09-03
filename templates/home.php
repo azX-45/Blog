@@ -21,17 +21,17 @@
 <?php
 if ($this->session->get('pseudo')) {
     ?>
- <a href="../index.php?route=logout">Déconnexion</a>
-    <a href="../index.php?route=profile">Profil</a>
+ <a href="../index.php?route=logout"></a>
+    <a href="../index.php?route=profile"></a>
     <?php if($this->session->get('role') === 'admin') { ?>
-        <a href="../index.php?route=administration">Administration</a>
+        <a href="../index.php?route=administration"></a>
     <?php } ?>
     
     <?php
 } else {
     ?>
-    <a href="../index.php?route=register">Inscription</a>
-    <a href="../index.php?route=login">Connexion</a>
+    <a href="../index.php?route=register"></a>
+    <a href="../index.php?route=login"></a>
     <?php
 }
 ?>
@@ -40,7 +40,7 @@ foreach ($chapters as $chapter)
 {
     ?>
     
-    <div class=" offset-md-2 col-md-8 offset-sm-1 col-sm-10 mt-3 pb-3">
+    <div class=" offset-md-2 col-md-8 offset-sm-1 col-sm-10 mt-3 pb-3" >
             
         <h2><a href="../index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></h2>
         <p><?= ($chapter->getContent());?></p>

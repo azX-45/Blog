@@ -163,7 +163,7 @@ class BackController extends Controller
         $this->session->stop();
         $this->session->start();
         if($param === 'logout') {
-            $this->session->set($param, 'À bientôt');
+            $this->session->set($param, '');
         } else {
             $this->session->set($param, 'Votre compte a bien été supprimé');
         }

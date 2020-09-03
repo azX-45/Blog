@@ -1,6 +1,6 @@
 <?php $this->title = "Connexion"; ?>
 <h1>Blog de JeanForteroche</h1>
-<p>Connexion au profil</p>
+<h2>Connexion au profil</h2>
 <?= $this->session->show('error_login'); ?>
 <div>
     <form method="post" action="../index.php?route=login">
