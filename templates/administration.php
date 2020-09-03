@@ -1,8 +1,6 @@
 <?php $this->title = 'Administration'; ?>
-
-<h1>Administration</h1>
 <div class="card shadow bg-light mb-3">
-
+<h1>Administration</h1>
 <?= $this->session->show('add_chapter'); ?>
 <?= $this->session->show('edit_chapter'); ?>
 <?= $this->session->show('delete_chapter'); ?>

@@ -1,5 +1,4 @@
 <?php $this->title = "Inscription"; ?>
-<h1></h1>
 <div class="card shadow bg-light mb-3 text-center">
 <h2>Inscription</h2>
     <form method="post" action="../index.php?route=register">

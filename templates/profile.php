@@ -1,6 +1,6 @@
 <?php $this->title = 'Mon profil'; ?>
+<div class="card shadow bg-light mb-3 text-center">
 <h1>Profil de l'utilisateur</h1>
-<div class="card shadow bg-light mb-3">
 <?= $this->session->show('update_password'); ?>
 <div>
     <h2><?= $this->session->get('pseudo'); ?></h2>
