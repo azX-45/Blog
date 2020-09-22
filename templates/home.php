@@ -36,18 +36,12 @@ if ($this->session->get('pseudo')) {
 }
 ?>
 <?php
-foreach ($chapters as $chapter)
-{
-    ?>
-    
+foreach ($chapters as $chapter): ?>
     <div class=" offset-md-2 col-md-8 offset-sm-1 col-sm-10 mt-3 pb-3 card shadow bg-light mb-3 text-center">
-    
         <h2><a href="../index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></h2>
-        <p><?= ($chapter->getContent());?></p>
+        <p><?= substr($chapter->getContent(),0 , 400);?></p>
         <p><?= htmlspecialchars($chapter->getAuthor());?></p>
         <p>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></p>
     </div>
     <br>
-    <?php
-}
-?>
+<?php endforeach; ?> 

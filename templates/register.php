@@ -11,5 +11,5 @@
         <input type="submit" value="Inscription" id="submit" name="submit">
     </form>
     <br>
-    <a href="../index.php">Retour à l'accueil</a>
+    <a href="../index.php"><button type="button" class="btn btn-info">Retour à l'accueil</button></a>
 </div>

@@ -16,30 +16,24 @@
         <td>Id</td>
         <td>Titre</td>
         <td>Contenu</td>
-        <td>Auteur</td>
         <td>Date</td>
         <td>Actions</td>
     </tr>
-    <?php
-    foreach ($chapters as $chapter)
-    {
-        ?>
+    <?php foreach ($chapters as $chapter): ?>
+        
         <tr>
             <td><?= ($chapter->getId());?></td>
-            <td><a href="../index.php?route=chapter&chapterId=<?= htmlspecialchars($chapter->getId());?>"><?= htmlspecialchars($chapter->getTitle());?></a></td>
-            <td><?= substr(htmlspecialchars($chapter->getContent()), 0, 150);?></td>
-            <td><?= htmlspecialchars($chapter->getAuthor());?></td>
+            <td><a href="../index.php?route=chapter&chapterId=<?= $chapter->getId(); ?>"><?= htmlspecialchars($chapter->getTitle());?></a></td>
+            <td><?= substr($chapter->getContent(), 0, 150);?></td>
             <td>Créé le : <?= htmlspecialchars($chapter->getCreatedAt());?></td>
             <td>
             <div class="actions">
-            <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>">Modifier</a>
+            <a href="../index.php?route=editChapter&chapterId=<?= $chapter->getId(); ?>"><button type="button" class="btn btn-outline-info">Modifier</button></a>
             <br>
-            <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>">Supprimer</a>
+            <a href="../index.php?route=deleteChapter&chapterId=<?= $chapter->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
             </div>
         </tr>
-        <?php
-    }
-    ?>
+    <?php endforeach; ?>
 </table>
 
 <h3>Commentaires signalés</h3>
@@ -61,8 +55,8 @@
             <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
             <td>
-                <a href="../index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="../index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
+                <a href="../index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>"><button type="button" class="btn btn-outline-info">Désignaler le commentaire</button></a>
+                <a href="../index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer le commentaire</button></a>
             </td>
         </tr>
         <?php
@@ -106,4 +100,4 @@
     }
     ?>
 </table>
-<a href="../index.php">Retour à l'accueil</a>
+<a href="../index.php"><button type="button" class="btn btn-info">Retour à l'accueil</button></a>

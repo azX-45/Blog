@@ -13,14 +13,13 @@ class ChapterDAO extends DAO
         $chapter->setId($row['id']);
         $chapter->setTitle($row['title']);
         $chapter->setContent($row['content']);
-        $chapter->setAuthor($row['pseudo']);
         $chapter->setCreatedAt($row['createdAt']);
         return $chapter;
     }
 
     public function getChapters()
     {
-        $sql = 'SELECT chapter.id, chapter.title, chapter.content, user.pseudo, chapter.createdAt FROM chapter INNER JOIN user ON chapter.user_id = user.id ORDER BY chapter.id DESC';
+        $sql = 'SELECT id, title, content, createdAt FROM chapter ORDER BY id DESC';
         $result = $this->createQuery($sql);
         $chapters = [];
         foreach ($result as $row){
@@ -33,7 +32,7 @@ class ChapterDAO extends DAO
 
     public function getChapter($chapterId)
     {
-        $sql = 'SELECT chapter.id, chapter.title, chapter.content, user.pseudo, chapter.createdAt FROM chapter INNER JOIN user ON chapter.user_id = user.id ORDER BY chapter.id DESC';
+        $sql = 'SELECT id, title, content,createdAt FROM chapter WHERE id=?';
         $result = $this->createQuery($sql, [$chapterId]);
         $chapter = $result->fetch();
         $result->closeCursor();

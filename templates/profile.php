@@ -5,9 +5,10 @@
 <div>
     <h2><?= $this->session->get('pseudo'); ?></h2>
     
-    <a href="../index.php?route=updatePassword">Modifier mon mot de passe</a>
+    <a href="../index.php?route=updatePassword"><a href="../index.php"><button type="button" class="btn btn-outline-info">Modifier mon mot de passe</button></a>
     <br>
-    <a href="../index.php?route=deleteAccount">Supprimer mon compte</a>
+    <br>
+    <a href="../index.php?route=deleteAccount"><button type="button" class="btn btn-outline-info">Supprimer mon compte</button></a>
 </div>
 <br>
-<a href="../index.php">Retour à l'accueil</a>
+<a href="../index.php"><button type="button" class="btn btn-outline-info">Retour à l'accueil</button></a>

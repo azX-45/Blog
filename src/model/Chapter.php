@@ -2,6 +2,8 @@
 
 namespace App\src\model;
 
+use DateTime;
+
 class Chapter
 {
     /**
@@ -98,7 +100,9 @@ class Chapter
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        $date = new DateTime($this->createdAt);
+
+        return $date->format('d/m/Y');
     }
 
     /**

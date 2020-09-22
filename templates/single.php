@@ -15,10 +15,7 @@
     <?php include('form_comment.php'); ?></div>
     <h3>Commentaires</h3>
     
-    <?php
-    foreach ($comments as $comment)
-    {
-        ?>
+    <?php foreach ($comments as $comment): ?>
         <h4><?= htmlspecialchars($comment->getPseudo());?></h4>
         <p><?= htmlspecialchars($comment->getContent());?></p>
         <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
@@ -33,10 +30,6 @@
             <?php
         }
         ?>
-        <p><a href="../index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
-        <br>
-        <?php
-    }
-    ?>
+    <?php endforeach; ?>
 </div>
-<a href="../index.php">Retour à l'accueil</a>
+<a href="../index.php"><button type="button" class="btn btn-info">Retour à l'accueil</button></a>
