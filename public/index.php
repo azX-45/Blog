@@ -1,7 +1,7 @@
 
 <?php
 
-require '../config/dev.php';
+require '../config/prod.php';
 require '../vendor/autoload.php';
 session_start();
 $router = new \App\config\Router();
