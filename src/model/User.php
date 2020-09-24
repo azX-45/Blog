@@ -7,18 +7,14 @@ class User
     
     private $id;
 
-    
     private $pseudo;
-
     
     private $password;
 
-    
     private $createdAt;
 
     private $role;
 
-    
     public function getId()
     {
         return $this->id;
