@@ -24,7 +24,7 @@ class Request
         return $this->get;
     }
 
-     /**
+    /**
      * @return Parameter
      */
 
@@ -36,7 +36,7 @@ class Request
     /**
      * @return Session
      */
-    
+
     public function getSession()
     {
         return $this->session;

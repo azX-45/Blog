@@ -4,6 +4,7 @@ namespace App\src\DAO;
 
 use App\config\Parameter;
 use App\src\model\User;
+
 class UserDAO extends DAO
 {
     private function buildObject($row)
@@ -21,7 +22,7 @@ class UserDAO extends DAO
         $sql = 'SELECT user.id, user.pseudo, user.createdAt, role.name FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';
         $result = $this->createQuery($sql);
         $users = [];
-        foreach ($result as $row){
+        foreach ($result as $row) {
             $userId = $row['id'];
             $users[$userId] = $this->buildObject($row);
         }
@@ -41,10 +42,10 @@ class UserDAO extends DAO
         $sql = 'SELECT COUNT(pseudo) FROM user WHERE pseudo = ?';
         $result = $this->createQuery($sql, [$post->get('pseudo')]);
         $isUnique = $result->fetchColumn();
-        if($isUnique) {
+        if ($isUnique) {
             return '<p>Le pseudo existe déjà</p>';
         }
-    } 
+    }
 
     public function login(Parameter $post)
     {

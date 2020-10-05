@@ -1,6 +1,7 @@
 <?php
 
 namespace App\src\constraint;
+
 use App\config\Parameter;
 
 class ChapterValidation extends Validation
@@ -23,18 +24,18 @@ class ChapterValidation extends Validation
 
     private function checkField($name, $value)
     {
-        if($name === 'title') {
+        if ($name === 'title') {
             $error = $this->checkTitle($name, $value);
             $this->addError($name, $error);
-        }
-        elseif ($name === 'content') {
+        } elseif ($name === 'content') {
             $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
         }
     }
 
-    private function addError($name, $error) {
-        if($error) {
+    private function addError($name, $error)
+    {
+        if ($error) {
             $this->errors += [
                 $name => $error
             ];
@@ -43,23 +44,23 @@ class ChapterValidation extends Validation
 
     private function checkTitle($name, $value)
     {
-        if($this->constraint->notBlank($name, $value)) {
+        if ($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('titre', $value);
         }
-        if($this->constraint->minLength($name, $value, 3)) {
-            return $this->constraint->minLength('titre', $value,3);
+        if ($this->constraint->minLength($name, $value, 3)) {
+            return $this->constraint->minLength('titre', $value, 3);
         }
-        if($this->constraint->maxLength($name, $value, 255)) {
+        if ($this->constraint->maxLength($name, $value, 255)) {
             return $this->constraint->maxLength('titre', $value, 255);
         }
     }
 
     private function checkContent($name, $value)
     {
-        if($this->constraint->notBlank($name, $value)) {
+        if ($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank('contenu', $value);
         }
-        if($this->constraint->minLength($name, $value, 3)) {
+        if ($this->constraint->minLength($name, $value, 3)) {
             return $this->constraint->minLength('contenu', $value, 3);
         }
     }

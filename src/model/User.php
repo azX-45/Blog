@@ -19,7 +19,7 @@ class User
     /**
      * @var string
      */
-    
+
     private $password;
 
     /**
@@ -46,7 +46,7 @@ class User
     /**
      * @param int $id
      */
-    
+
     public function setId($id)
     {
         $this->id = $id;
@@ -64,7 +64,7 @@ class User
     /**
      * @return string $pseudo
      */
-    
+
     public function setPseudo($pseudo)
     {
         $this->pseudo = $pseudo;
@@ -82,7 +82,7 @@ class User
     /**
      * @return string $password
      */
-    
+
     public function setPassword($password)
     {
         $this->password = $password;
@@ -100,7 +100,7 @@ class User
     /**
      * @param \DateTime $createdAt
      */
-    
+
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;

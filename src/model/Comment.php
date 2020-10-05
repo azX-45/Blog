@@ -4,7 +4,7 @@ namespace App\src\model;
 
 class Comment
 {
-    
+
     /**
      * @var int
      */
@@ -22,7 +22,7 @@ class Comment
      */
 
     private $content;
-    
+
     /**
      * @var \DateTime
      */
@@ -38,7 +38,7 @@ class Comment
     /**
      * @return int
      */
-    
+
     public function getId()
     {
         return $this->id;
@@ -47,7 +47,7 @@ class Comment
     /**
      * @param int $id
      */
-    
+
     public function setId($id)
     {
         $this->id = $id;
@@ -56,7 +56,7 @@ class Comment
     /**
      * @return string
      */
-    
+
     public function getPseudo()
     {
         return $this->pseudo;
@@ -74,16 +74,16 @@ class Comment
     /**
      * @return string
      */
-    
+
     public function getContent()
     {
         return $this->content;
     }
 
-     /**
+    /**
      * @param string $content
      */
-    
+
     public function setContent($content)
     {
         $this->content = $content;
@@ -92,7 +92,7 @@ class Comment
     /**
      * @return \DateTime
      */
-    
+
     public function getCreatedAt()
     {
         return $this->createdAt;
@@ -101,7 +101,7 @@ class Comment
     /**
      * @param \DateTime $createdAt
      */
-    
+
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
@@ -110,7 +110,7 @@ class Comment
     /**
      * @return string
      */
-    
+
     public function isFlag()
     {
         return $this->flag;

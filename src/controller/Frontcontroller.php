@@ -10,7 +10,7 @@ class FrontController extends Controller
     {
         $chapters = $this->chapterDAO->getChapters();
         return $this->view->render('home', [
-           'chapters' => $chapters
+            'chapters' => $chapters
         ]);
     }
 
@@ -26,9 +26,9 @@ class FrontController extends Controller
 
     public function addComment(Parameter $post, $chapterId)
     {
-        if($post->get('submit')) {
+        if ($post->get('submit')) {
             $errors = $this->validation->validate($post, 'Comment');
-            if(!$errors) {
+            if (!$errors) {
                 $this->commentDAO->addComment($post, $chapterId);
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
                 header('Location: ../index.php?route=chapter&chapterId=29');
@@ -52,12 +52,12 @@ class FrontController extends Controller
     }
     public function register(Parameter $post)
     {
-        if($post->get('submit')) {
+        if ($post->get('submit')) {
             $errors = $this->validation->validate($post, 'User');
-            if($this->userDAO->checkUser($post)) {
+            if ($this->userDAO->checkUser($post)) {
                 $errors['pseudo'] = $this->userDAO->checkUser($post);
             }
-            if(!$errors) {
+            if (!$errors) {
                 $this->userDAO->register($post);
                 $this->session->set('register', 'Votre inscription a bien été effectuée');
                 header('Location: ../index.php');
@@ -66,25 +66,23 @@ class FrontController extends Controller
                 'post' => $post,
                 'errors' => $errors
             ]);
-
         }
         return $this->view->render('register');
     }
     public function login(Parameter $post)
     {
-        if($post->get('submit')) {
+        if ($post->get('submit')) {
             $result = $this->userDAO->login($post);
-            if($result && $result['isPasswordValid']) {
+            if ($result && $result['isPasswordValid']) {
                 $this->session->set('login', 'Connecté');
                 $this->session->set('id', $result['result']['id']);
                 $this->session->set('role', $result['result']['name']);
                 $this->session->set('pseudo', $post->get('pseudo'));
                 header('Location: ../index.php');
-            }
-            else {
+            } else {
                 $this->session->set('error_login', 'Peudo ou mot de passe incorrects');
                 return $this->view->render('login', [
-                    'post'=> $post
+                    'post' => $post
                 ]);
             }
         }

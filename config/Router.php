@@ -25,85 +25,47 @@ class Router
     public function run()
     {
         $route = $this->request->getGet()->get('route');
-        try{
-            if(isset($route))
-            {
-                if($route === 'chapter'){
+        try {
+            if (isset($route)) {
+                if ($route === 'chapter') {
                     $this->frontController->chapter($this->request->getGet()->get('chapterId'));
-                }
-
-                elseif($route === 'addChapter'){
+                } elseif ($route === 'addChapter') {
                     $this->backController->addChapter($this->request->getPost());
-                }
-
-                elseif($route === 'editChapter'){
+                } elseif ($route === 'editChapter') {
                     $this->backController->editChapter($this->request->getPost(), $this->request->getGet()->get('chapterId'));
-                }
-
-                elseif($route === 'deleteChapter'){
+                } elseif ($route === 'deleteChapter') {
                     $this->backController->deleteChapter($this->request->getGet()->get('chapterId'));
-                }
-
-                elseif($route === 'addComment'){
+                } elseif ($route === 'addComment') {
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('chapterId'));
-                }
-
-                elseif($route === 'flagComment'){
+                } elseif ($route === 'flagComment') {
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
-                }
-
-                elseif($route === 'unflagComment'){
+                } elseif ($route === 'unflagComment') {
                     $this->backController->unflagComment($this->request->getGet()->get('commentId'));
-                }
-
-                elseif($route === 'deleteComment'){
+                } elseif ($route === 'deleteComment') {
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
-                }
-
-                elseif($route === 'register'){
+                } elseif ($route === 'register') {
                     $this->frontController->register($this->request->getPost());
-                }
-
-                elseif($route === 'login'){
+                } elseif ($route === 'login') {
                     $this->frontController->login($this->request->getPost());
-                }
-
-                elseif($route === 'profile'){
+                } elseif ($route === 'profile') {
                     $this->backController->profile();
-                }
-
-                elseif($route === 'updatePassword'){
+                } elseif ($route === 'updatePassword') {
                     $this->backController->updatePassword($this->request->getPost());
-                }
-
-                elseif($route === 'logout'){
+                } elseif ($route === 'logout') {
                     $this->backController->logout();
-                }
-
-                elseif($route === 'deleteAccount'){
+                } elseif ($route === 'deleteAccount') {
                     $this->backController->deleteAccount();
-                }
-
-                elseif($route === 'deleteUser'){
+                } elseif ($route === 'deleteUser') {
                     $this->backController->deleteUser($this->request->getGet()->get('userId'));
-                }
-
-                elseif($route === 'administration'){
+                } elseif ($route === 'administration') {
                     $this->backController->administration();
-                }
-
-                else{
+                } else {
                     $this->errorController->errorNotFound();
                 }
-
-            }
-            else{
+            } else {
                 $this->frontController->home();
             }
-
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             $this->errorController->errorServer();
         }
     }

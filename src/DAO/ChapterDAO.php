@@ -22,7 +22,7 @@ class ChapterDAO extends DAO
         $sql = 'SELECT id, title, content, createdAt FROM chapter ORDER BY id DESC';
         $result = $this->createQuery($sql);
         $chapters = [];
-        foreach ($result as $row){
+        foreach ($result as $row) {
             $chapterId = $row['id'];
             $chapters[$chapterId] = $this->buildObject($row);
         }

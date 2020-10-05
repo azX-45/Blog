@@ -15,13 +15,13 @@ class Chapter
     /**
      * @var string
      */
-    
+
     private $title;
 
     /**
      * @var string
      */
-    
+
     private $content;
 
     /**
@@ -33,7 +33,7 @@ class Chapter
     /**
      * @var \DateTime
      */
-    
+
     private $createdAt;
 
     /**
@@ -53,7 +53,7 @@ class Chapter
     {
         $this->id = $id;
     }
-    
+
     /**
      * @return string
      */
@@ -63,7 +63,7 @@ class Chapter
         return $this->title;
     }
 
-    
+
     /**
      * @param string $title
      */
@@ -73,19 +73,19 @@ class Chapter
         $this->title = $title;
     }
 
-     /**
+    /**
      * @return string
      */
-    
+
     public function getContent()
     {
         return $this->content;
     }
 
-     /**
+    /**
      * @param string $content
      */
-    
+
     public function setContent($content)
     {
         $this->content = $content;
@@ -94,7 +94,7 @@ class Chapter
     /**
      * @return string
      */
-    
+
     public function getAuthor()
     {
         return $this->author;
@@ -109,7 +109,7 @@ class Chapter
         $this->author = $author;
     }
 
-    
+
     /**
      * @return \DateTime
      */
@@ -124,7 +124,7 @@ class Chapter
     /**
      * @param \DateTime $createdAt
      */
-    
+
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
