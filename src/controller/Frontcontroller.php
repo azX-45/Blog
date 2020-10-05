@@ -48,7 +48,7 @@ class FrontController extends Controller
     {
         $this->commentDAO->flagComment($commentId);
         $this->session->set('flag_comment', 'Le commentaire a bien été signalé');
-        header('Location: ../index.php');
+        header('Location: ../index.php?route=chapter&chapterId=29');
     }
     public function register(Parameter $post)
     {
